@@ -8,11 +8,11 @@
 
 
 ## state output
-![State_output][https://github.com/Musyue/helicopter_simlulation/blob/master/Result/state_output.png]
+![State_output](https://github.com/Musyue/helicopter_simlulation/blob/master/Result/state_output.png)
 
 
 ## theta output
-![theta_output][https://github.com/Musyue/helicopter_simlulation/blob/master/Result/theta.png]
+![theta_output](https://github.com/Musyue/helicopter_simlulation/blob/master/Result/theta.png)
 
 ## state output
-![pha_output][https://github.com/Musyue/helicopter_simlulation/blob/master/Result/pha.png]
+![pha_output](https://github.com/Musyue/helicopter_simlulation/blob/master/Result/pha.png)
