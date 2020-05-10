@@ -1,0 +1,15 @@
+function [A,V,E1,E2]=zzsp_rs(A,V,n,l);
+x=A(l+1,l+1);y=A(l,l);w=A(l,l+1)*A(l+1,l);p=(y-x)/2.;q=p^2+w;
+if q<0.,E1=p+x;E2=sqrt(-q);
+else z=sqrt(q);if p<0.,z=p-z;else z=p+z;end;if z==0.,r=0.;else r=-w/z;end;
+   if abs(x+z)>=abs(x+r),z=r;end;y=y-x-z;x=-z;t=A(l,l+1);u=A(l+1,l);
+   if (abs(y)+abs(u))<=(abs(t)+abs(x)),q=x;p=t;else q=u;p=y;end;
+   r=sqrt(p^2+q^2);
+   if r>0.,p=p/r;q=q/r;
+      for j=l:n,z=A(l,j);A(l,j)=p*z+q*A(l+1,j);A(l+1,j)=p*A(l+1,j)-q*z;end;
+      l1=l+1;
+      for i=1:l1,z=A(i,l);A(i,l)=p*z+q*A(i,l+1);A(i,l+1)=p*A(i,l+1)-q*z;end;
+      for i=1:n,z=V(i,l);V(i,l)=p*z+q*V(i,l+1);V(i,l+1)=p*V(i,l+1)-q*z;end;
+   end;
+   A(l+1,l)=0.;E1=A(l,l);E2=A(l+1,l+1);
+end;
