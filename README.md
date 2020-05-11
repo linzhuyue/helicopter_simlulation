@@ -20,3 +20,6 @@
 
 ## wind disturbance
 ![pha_output](https://github.com/Musyue/helicopter_simlulation/blob/master/report_latex_folder/cos.png)
+
+## with wind disturbance y output
+![pha_output](https://github.com/Musyue/helicopter_simlulation/blob/master/report_latex_folder/state_output.png)
