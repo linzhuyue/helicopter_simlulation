@@ -4,6 +4,8 @@
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage[demo]{graphicx}
+\usepackage{subfig}
 \usepackage[outdir=./]{epstopdf}
 \DeclareGraphicsExtensions{.eps}
 \usepackage{bm}
@@ -354,17 +356,42 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
 
 
 \item \textbf{ Part2: Results}
-First,I will give the simulink block diagram show figure 1:\\
-\begin{figure}[ht]
-
+First,I will give the simulink block diagram show figure 1,It has 6 main block,the detail can be found in figure 1:\\
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{block_diagram.png}
+    \includegraphics[width=20cm,height=10cm,scale=0.6]{block_diagram.png}
     \caption{The Unmanned Helicopter LQG Controller diagram}
     \label{fig:label}
     \end{figure}
+
+Then,I will show the state and error ,and y output from figure 2 and figure 3:\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=20cm,height=10cm,scale=0.6]{state_18.png}
+    \caption{The Plant state x and error}
+    \label{fig:label}
+    \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=20cm,height=10cm,scale=0.6]{state_output.png}
+    \caption{The Plant y output}
+    \label{fig:label}
+    \end{figure}
+At last,I will show all state and output respectively.
+\begin{figure}[H]
+        \centering
+        \subfloat[State:pha]{{\includegraphics[width=8cm]{pha.png} }}%
+        \qquad
+        \subfloat[Error:pha]{{\includegraphics[width=8cm]{pha.png} }}%
+        \caption{Pha state and error}
+        \label{fig:example}%
+    \end{figure}
+
+
+
+
 \end{enumerate}
-
-
 \begin{thebibliography}{00}
 
     \bibitem{b1} G. O. Young, ``Synthetic structure of industrial plastics,'' in \emph{Plastics,} 2\textsuperscript{nd} ed., vol. 3, J. Peters, Ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15--64.

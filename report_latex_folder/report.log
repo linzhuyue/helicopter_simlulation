@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.10)  11 MAY 2020 19:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.10)  11 MAY 2020 20:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -117,6 +117,57 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
+)
+
+/Users/yue/Desktop/research/COURSE/linear/design_problem_linear/report_latex_folder/report.tex:8: LaTeX Error: Option clash for package graphicx.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \usepackage
+               {subfig}
+The package graphicx has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [demo]
+Adding the global options:
+  ,demo
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@tempdima=\dimen117
+\caption@indent=\dimen118
+\caption@parindent=\dimen119
+\caption@hangindent=\dimen120
+)
+\c@caption@flags=\count101
+\c@ContinuedFloat=\count102
+Package caption Info: float package is loaded.
+)
+\c@KVtest=\count103
+\sf@farskip=\skip46
+\sf@captopadj=\dimen121
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count104
+\c@subfigure@save=\count105
+\c@lofdepth=\count106
+\c@subtable=\count107
+\c@subtable@save=\count108
+\c@lotdepth=\count109
+\sf@top=\skip49
+\sf@bottom=\skip50
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
  (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -168,35 +219,35 @@ Package ifvtex Info: VTeX not detected.
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count101
-\Gm@cntv=\count102
-\c@Gm@tempcnt=\count103
-\Gm@bindingoffset=\dimen114
-\Gm@wd@mp=\dimen115
-\Gm@odd@mp=\dimen116
-\Gm@even@mp=\dimen117
-\Gm@layoutwidth=\dimen118
-\Gm@layoutheight=\dimen119
-\Gm@layouthoffset=\dimen120
-\Gm@layoutvoffset=\dimen121
+\Gm@cnth=\count110
+\Gm@cntv=\count111
+\c@Gm@tempcnt=\count112
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@layoutwidth=\dimen126
+\Gm@layoutheight=\dimen127
+\Gm@layouthoffset=\dimen128
+\Gm@layoutvoffset=\dimen129
 \Gm@dimlist=\toks23
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count104
+\lst@mode=\count113
 \lst@gtempboxa=\box31
 \lst@token=\toks24
-\lst@length=\count105
-\lst@currlwidth=\dimen122
-\lst@column=\count106
-\lst@pos=\count107
-\lst@lostspace=\dimen123
-\lst@width=\dimen124
-\lst@newlines=\count108
-\lst@lineno=\count109
-\lst@maxwidth=\dimen125
+\lst@length=\count114
+\lst@currlwidth=\dimen130
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen131
+\lst@width=\dimen132
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen133
  (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-\c@lstnumber=\count110
-\lst@skipnumbers=\count111
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
 \lst@framebox=\box32
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/02/27 1.8b listings configuration
@@ -210,24 +261,28 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: xetex.def on input line 147.
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-) (./report.aux)
+)
+No file report.aux.
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -262,32 +317,32 @@ LaTeX Font Info:    ... okay on input line 39.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count112
-LaTeX Font Info:    Try loading font information for U+lasy on input line 40.
+\c@lstlisting=\count121
+LaTeX Font Info:    Try loading font information for U+lasy on input line 42.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 40.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 48.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 48.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 50.
 
-Overfull \hbox (57.35635pt too wide) in paragraph at lines 47--51
+Overfull \hbox (57.35635pt too wide) in paragraph at lines 49--53
 [] \TU/lmr/m/n/12 In this Unmanned Helicopter case. We consider 9 state space variable. There are three angle(Roll,Pitch,Yaw),three
  []
 
 
-Overfull \hbox (60.19632pt too wide) in paragraph at lines 87--138
+Overfull \hbox (60.19632pt too wide) in paragraph at lines 89--140
 \OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = []$\TU/lmr/m/n/12 ; $\OML/cmm/m/it/12 E \OT1/cmr/m/n/12 = []$\TU/lmr/m/n/12 ; $\OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 = []$\TU/lmr/m/n/12 ; 
  []
 
@@ -297,41 +352,41 @@ Overfull \hbox (60.19632pt too wide) in paragraph at lines 87--138
 Missing character: There is no ； in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
 
-Overfull \hbox (10.31898pt too wide) in paragraph at lines 139--158
+Overfull \hbox (10.31898pt too wide) in paragraph at lines 141--160
 \TU/lmr/m/n/12 (A,C1)is controllable and observable. It’s obvious full rank with the matlab command rank(ctrb(A,B))
  []
 
 [2]
 Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
 
-Overfull \hbox (26.3018pt too wide) in paragraph at lines 164--214
+Overfull \hbox (26.3018pt too wide) in paragraph at lines 166--216
 \OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 04 \OMS/cmsy/m/n/12 ^^C []$\TU/lmr/m/n/12 ; 
  []
 
 
-Overfull \hbox (56.04823pt too wide) in paragraph at lines 164--214
+Overfull \hbox (56.04823pt too wide) in paragraph at lines 166--216
 \OML/cmm/m/it/12 Abk \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 04 \OMS/cmsy/m/n/12 ^^C []$\TU/lmr/m/n/12 ; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--214
+Underfull \hbox (badness 10000) in paragraph at lines 166--216
 
  []
 
 [3]
 Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
 
-Overfull \hbox (72.69226pt too wide) in paragraph at lines 221--351
+Overfull \hbox (72.69226pt too wide) in paragraph at lines 223--353
 \OML/cmm/m/it/12 Ack \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 04 \OMS/cmsy/m/n/12 ^^C []$\TU/lmr/m/n/12 ; 
  []
 
 
-Overfull \hbox (103.48709pt too wide) in paragraph at lines 221--351
+Overfull \hbox (103.48709pt too wide) in paragraph at lines 223--353
 [] [] $\TU/lmr/m/n/12 ; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--351
+Underfull \hbox (badness 10000) in paragraph at lines 223--353
 
  []
 
@@ -339,19 +394,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 221--351
 File: block_diagram.png Graphic file (type bmp)
 <block_diagram.png>
 
-Overfull \hbox (127.99358pt too wide) in paragraph at lines 361--362
+Overfull \hbox (28.4734pt too wide) in paragraph at lines 362--363
  [][] 
  []
 
-[6] [7] (./report.aux) )
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--365
+
+ []
+
+[6]
+File: state_18.png Graphic file (type bmp)
+<state_18.png>
+
+Overfull \hbox (28.45712pt too wide) in paragraph at lines 370--371
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--373
+
+ []
+
+File: state_output.png Graphic file (type bmp)
+<state_output.png>
+
+Overfull \hbox (28.45712pt too wide) in paragraph at lines 377--378
+ [][] 
+ []
+
+[7]
+File: pha.png Graphic file (type bmp)
+<pha.png>
+File: pha.png Graphic file (type bmp)
+<pha.png>
+ [8] (./report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 4573 strings out of 492916
- 62569 string characters out of 6133345
- 373817 words of memory out of 5000000
- 8525 multiletter control sequences out of 15000+600000
- 17448 words of font info for 80 fonts, out of 8000000 for 9000
+ 5820 strings out of 492916
+ 84954 string characters out of 6133345
+ 398154 words of memory out of 5000000
+ 9759 multiletter control sequences out of 15000+600000
+ 17456 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 42i,15n,40p,412b,1627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,15n,49p,412b,1627s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (7 pages).
+Output written on report.pdf (8 pages).
