@@ -178,14 +178,13 @@ C2_=C2*inv(P)
 C2_1=C2_(1:9,1:6)
 C2_2=C2_(1:9,7:9)
 Ar=A22
-% Er=E2
+Er=E2
 Cr=[C1_02;A12]
 Dr=[D1_0;E1]
-% Eer=C2_2
-epsilon=0.001
-Er=epsilon*eye(3)
-Eer=epsilon*eye(3)
+Eer=C2_2
+epsilon=
+Eer=eye(3)
 gms2 = gm8star(Ar',Cr',Er',Dr',Eer')
-Fr = h8state(Ar',Cr',Er',Dr',Eer',1,[1])
+Fr = h8state(Ar',Cr',Er',Dr',Eer',0.005,[1])
 
 
