@@ -1,7 +1,10 @@
 # helicopter_simlulation
 
 
-## This is a design assignment for helicopter,There some linear toolkits from the textbook,you can not use for commercial activity,I use LQG technique for this case. When the clock is between 0-10,the input and output noise are white noise,10-30 the input noise is wind disturbance.
+## This is a design assignment for helicopter. You can not use the linear toolkits of textbook for commercial activity.
+
+
+In this case, The LQG technique is the main solution. Please note:When the clock is between 0-10,the input and output noise are white noise,10-30 the input noise is wind disturbance.
 
 
 # Results
