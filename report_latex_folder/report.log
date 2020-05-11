@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.10)  11 MAY 2020 21:31
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.2.10)  11 MAY 2020 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -352,74 +352,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--128
 Missing character: There is no ； in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 167--225
+File: phase_magnititude.png Graphic file (type bmp)
+<phase_magnititude.png>
+
+Overfull \hbox (28.45714pt too wide) in paragraph at lines 209--210
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--212
 
  []
 
 
-Overfull \hbox (26.3018pt too wide) in paragraph at lines 167--225
+Overfull \hbox (26.3018pt too wide) in paragraph at lines 167--212
 \OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 04 \OMS/cmsy/m/n/12 ^^C []$\TU/lmr/m/n/12 ; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--225
+Underfull \hbox (badness 10000) in paragraph at lines 167--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--225
+Underfull \hbox (badness 10000) in paragraph at lines 167--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--225
+Underfull \hbox (badness 10000) in paragraph at lines 167--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--225
+Underfull \hbox (badness 10000) in paragraph at lines 167--212
 
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 214--233
+
+ []
+
+[4]
 Missing character: There is no ： in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--312
+Underfull \hbox (badness 10000) in paragraph at lines 240--320
 
  []
 
 
-Overfull \hbox (72.69226pt too wide) in paragraph at lines 232--312
+Overfull \hbox (72.69226pt too wide) in paragraph at lines 240--320
 \OML/cmm/m/it/12 Ack \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 e \OT1/cmr/m/n/12 + 04 \OMS/cmsy/m/n/12 ^^C []$\TU/lmr/m/n/12 ; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--312
+Underfull \hbox (badness 10000) in paragraph at lines 240--320
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--312
+Underfull \hbox (badness 10000) in paragraph at lines 240--320
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--312
+Underfull \hbox (badness 10000) in paragraph at lines 240--320
 
  []
 
-[4] [5]
-Overfull \hbox (103.48709pt too wide) in paragraph at lines 313--367
+[5]
+Overfull \hbox (103.48709pt too wide) in paragraph at lines 321--375
 [] [] $\TU/lmr/m/n/12 ; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--367
+Underfull \hbox (badness 10000) in paragraph at lines 321--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--367
+Underfull \hbox (badness 10000) in paragraph at lines 321--375
 
  []
 
@@ -427,12 +440,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--367
 File: block_diagram.png Graphic file (type bmp)
 <block_diagram.png>
 
-Overfull \hbox (28.4734pt too wide) in paragraph at lines 376--377
+Overfull \hbox (28.4734pt too wide) in paragraph at lines 384--385
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--379
+Underfull \hbox (badness 10000) in paragraph at lines 380--387
 
  []
 
@@ -440,19 +453,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 372--379
 File: state_18.png Graphic file (type bmp)
 <state_18.png>
 
-Overfull \hbox (28.45712pt too wide) in paragraph at lines 384--385
+Overfull \hbox (28.45712pt too wide) in paragraph at lines 392--393
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--387
+Underfull \hbox (badness 10000) in paragraph at lines 389--395
 
  []
 
 File: state_output.png Graphic file (type bmp)
 <state_output.png>
 
-Overfull \hbox (28.45712pt too wide) in paragraph at lines 391--392
+Overfull \hbox (28.45712pt too wide) in paragraph at lines 399--400
  [][] 
  []
 
@@ -462,7 +475,7 @@ File: pha.png Graphic file (type bmp)
 File: pha_err.png Graphic file (type bmp)
 <pha_err.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--403
+Underfull \hbox (badness 10000) in paragraph at lines 403--411
 
  []
 
@@ -525,10 +538,10 @@ File: phi_err.png Graphic file (type bmp)
 File: phi_o.png Graphic file (type bmp)
 <phi_o.png>
  [17]
-/Users/yue/Desktop/research/COURSE/linear/design_problem_linear/report_latex_folder/report.tex:528: Misplaced alignment tab character &.
+/Users/yue/Desktop/research/COURSE/linear/design_problem_linear/report_latex_folder/report.tex:536: Misplaced alignment tab character &.
 <recently read> &
                  
-l.528 ...stem Theory and Design, Holt, Rinehart $&
+l.536 ...stem Theory and Design, Holt, Rinehart $&
                                                   $ Winston, 1984
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -544,10 +557,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 5919 strings out of 492916
- 86038 string characters out of 6133345
- 386154 words of memory out of 5000000
- 9838 multiletter control sequences out of 15000+600000
+ 5923 strings out of 492916
+ 86135 string characters out of 6133345
+ 384154 words of memory out of 5000000
+ 9841 multiletter control sequences out of 15000+600000
  17440 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,15n,49p,412b,1627s stack positions out of 5000i,500n,10000p,200000b,80000s

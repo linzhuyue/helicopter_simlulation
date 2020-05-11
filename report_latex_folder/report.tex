@@ -203,6 +203,14 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             -0.0001 + 0.0000i
             \end{bmatrix}
         $; We can see all eigvalue have negative real part.\\
+        Here,I also plot bode from the pair(A,B,F,0),The figure shows fellow:\\
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=20cm,height=10cm,scale=0.6]{phase_magnititude.png}
+            \caption{The Plant phase and magnitude}
+            \label{fig:label}
+            \end{figure}
+
         \textbf{Second:},We need to use Kalman filter for the plant,
         $ \dot{\hat{x}}=A\hat{x}+K_e(y-\hat{y}),\hat{y}=C_1\hat{x}$. \\
         We also use icare to sove Riccati Equtaion:\\
@@ -370,7 +378,7 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
 
 
 \item \textbf{ Part2: Results}
-First,I will give the simulink block diagram show figure 1,It has 6 main block,the detail can be found in figure 1:\\
+First,I will give the simulink block diagram show figure 2,It has 6 main block,the detail can be found in figure 2:\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=20cm,height=10cm,scale=0.6]{block_diagram.png}
@@ -378,7 +386,7 @@ First,I will give the simulink block diagram show figure 1,It has 6 main block,t
     \label{fig:label}
     \end{figure}
 
-Then,I will show the state and error,and y output from figure 2 and figure 3:\\
+Then,I will show the state and error,and y output from figure 3 and figure 4:\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=20cm,height=10cm,scale=0.6]{state_18.png}
