@@ -47,7 +47,7 @@
 
 
 \hspace{0.5em}In this Unmanned Helicopter case. We consider 9 state space variable. There are three angle(Roll,Pitch,Yaw),three angular rates and three unmeasured
-variable($a_s,b_s,\delta_{ped,int}$). This system also has three input and three dsiturbance $\delta_{lat},\delta_{lon},\delta_{ped}$ and $u_{wind},u_{wind},\delta_{wind}$,respectively.
+variable($a_s,b_s,\delta_{ped,int}$). This system also has three inputs and three dsiturbance wind noise$\delta_{lat},\delta_{lon},\delta_{ped}$ and $u_{wind},u_{wind},\delta_{wind}$,respectively.
 I choose LQG technique in this case for Inner-loop Flight control. I also try $H_{\infty}$,but I have some problem about reduced order Controller design,
 I can not caculate the right nums. So I decide to use LQG for this case. And I use simulink to simulation my controller,It have good performance that I will show in Part2(Results analysis).
 
@@ -124,7 +124,8 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             0       &0      &      0 \\
             0       &0      &      0 
             \end{bmatrix}
-        $;
+        $;\\
+
         $C_1=\begin{bmatrix}
             1 &0 &0 &0 &0 &0 &0 &0 &0 \\
             0 &1 &0 &0 &0 &0 &0 &0 &0 \\
@@ -138,11 +139,11 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             \end{bmatrix}
         $;
 
-    \item Choose the LQG technique for this. Before we start the design we need to know the pair (A,B) and (A,C1)is controllable and observable.
+    \item Choose the LQG technique for this case. Before we start the design, we need to know the pair (A,B) and (A,C1)is controllable and observable.
         It's obvious full rank with the matlab command rank(ctrb(A,B)) and rank(obsv(A,C1)). So we can do the job now.
-        we need to three steps, they show as fellowing:\\
+        we need to three steps for solving this case, I will show as fellowing:\\
         \textbf{First:},We need to design a LQR control law $ u=-Fx$,and we need to choose the Matirx Q and R($ Q\geq 0$,$ R \geq 0$).
-        Here In my simulation I choose the Q and R matrix as fellow.\\
+        Here is the  Q and R matrix in my simulation:\\
         $Q=\begin{bmatrix}
             1&     0&     0&     0&     0&     0&     0&     0&     0 \\
             0&     1&     0&     0&     0&     0&     0&     0&     0 \\
@@ -155,15 +156,16 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             0&     0&     0&     0&     0&     0&     0&     0&     1 
             \end{bmatrix}
         $;$ R =0.001$ \\
-        Then,use Matlab function icare to solve the Riccati Equtaion $ PA+A^TP-PBR^{-1}B^TP+Q=0 $, $ P \geq 0 $,$ F=R^{-1}B^TP $；
-        The matlab function is：
+        Then,use Matlab function icare(\textbf{Note:}are function can not solve B nonsymmetric,so i choose icare more general function) to solve the Riccati Equtaion $ PA+A^TP-PBR^{-1}B^TP+Q=0 $, $ P \geq 0 $,$ F=R^{-1}B^TP $；
+        The matlab code is：
         \begin{lstlisting}
             [X1,K1,L1] = icare(A,[],Q'*Q,[],[],[],-B*B');
             F=inv(R)*B'*X1;
             Abk=A-B*F;
             eigabk=eig(Abk);
         \end{lstlisting} 
-        Then,We obtain the F matrix as fellow: \\
+        Then,We obtain the gain F matrix as fellow: \\
+        \\
         $F=1.0e+04 *\begin{bmatrix}
             0.0943&    0.0035&    0.0652&    0.0039&    0.1251&    1.5944&    0.0356&   -0.0087&    0.0332 \\
            -0.0046&    0.0999&   -0.0025&    0.0724&    1.0974&   -0.0017&   -0.0012&    0.0003&    0.0028 \\
@@ -171,7 +173,9 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             \end{bmatrix}
         $; \\
         And the matrix $ A-BF$ is show: \\
+        \\
         $Abk=1.0e+04 *\begin{bmatrix}
+            \begin{smallmatrix}
             0&         0&    0.0001&         0&         0&         0&    0.0000&         0&         0 \\
             0&         0&         0&    0.0001&         0&         0&   -0.0000&         0&         0 \\
       -1.4344&   -0.1806&   -1.5341&   -0.0177&    0.1934&    1.7547&    3.1298&    4.6733&    4.0883 \\
@@ -181,9 +185,12 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
        2.7517&    0.3465&    2.9430&    0.0339&   -0.3711&   -3.2539&   -6.0041&   -8.9653&   -7.8429 \\
        0.1273&    0.0160&    0.1362&    0.0016&   -0.0172&   -0.1506&   -0.2779&   -0.4154&   -0.3630 \\
             0&         0&         0&    0.0000&         0&         0&    0.0001&         0&         0 
-            \end{bmatrix}
+        \end{smallmatrix}    
+        \end{bmatrix}
         $; \\
-        And the eigvalues is show ：\\
+        \\
+        And the eigvalues is show:\\
+        \\
         $Eigvalues=1.0e+04 *\begin{bmatrix}
             -7.9558 + 0.0000i \\ 
             -4.1816 + 0.0000i \\
@@ -197,9 +204,10 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             \end{bmatrix}
         $; We can see all eigvalue have negative real part.\\
         \textbf{Second:},We need to use Kalman filter for the plant,
-        $ \dot{\hat{x}}=A\hat{x}+K_e(y-\hat{y}),\hat{y}=C_1\hat{x}$ \\
-        We also use icare to sove Riccati Equtaion:$ P_eA^T+AP_e-P_eC^TR_e^{-1}CP_e+Q_e=0 $, $ P_e \geq 0 $,$ Ke=P_eC^TR_e^-1 $ \\
-        And here we choose the $ Q_e $ and $ R_e $ matrix is:\\
+        $ \dot{\hat{x}}=A\hat{x}+K_e(y-\hat{y}),\hat{y}=C_1\hat{x}$. \\
+        We also use icare to sove Riccati Equtaion:\\
+        $ P_eA^T+AP_e-P_eC^TR_e^{-1}CP_e+Q_e=0 $, $ P_e \geq 0 $,$ Ke=P_eC^TR_e^-1 $ \\
+        And here we choose the $ Q_e $ and $ R_e $ matrix as fellowing:\\
         $Q_e=1.0e-03 *\begin{bmatrix}
             1.0000&         0&         0&         0&         0&         0&         0&         0&         0 \\
                  0&    1.0000&         0&         0&         0&         0&         0&         0&         0 \\
@@ -211,7 +219,8 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
                  0&         0&         0&         0&         0&         0&         0&    1.0000&         0 \\
                  0&         0&         0&         0&         0&         0&         0&         0&    1.0000 
             \end{bmatrix}
-        $;$ R_e=0.004 $ \\
+        $;\\
+        $ R_e=0.004 $ \\
         Using Matlab code as fellow:\\
         \begin{lstlisting}
             [X2,K2,L2] = icare(A,[],Qe'*Qe,[],[],[],-C1*C1');
@@ -234,6 +243,7 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             0.0000&   -0.0000&   -0.0000&    0.0001&         0&         0&   -0.0000&         0&    0.2500 
             \end{bmatrix}
         $; \\
+        \\
         And the matrix $ A-K_eC_1$ is show: \\
         $Ack=1.0e+04 *\begin{bmatrix}
             -0.2500&   -0.0000&    0.9986&    0.0023&         0&         0&    0.0002&         0&   -0.0000 \\
@@ -248,6 +258,7 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             \end{bmatrix}
         $; \\
         And the eigvalues is show ：\\
+        \\
         $Eigvalues=\begin{bmatrix}
             -1.5367 +23.9237i \\
             -1.5367 -23.9237i \\
@@ -260,19 +271,20 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             -0.4999 + 0.0000i
             \end{bmatrix}
         $; We can also see all eigvalue have negative real part.\\ 
-        \textbf{The last:},The plant LQG control law is $u=-F\hat(x)$ \\
+        \textbf{At The last:}The plant LQG control law is $u=-F\hat(x)$ \\
         $\begin{cases} 
             \dot{\hat{x}}=(A-BF-K_eC_1)+K_ey ,   \\
             u=-F\hat{x}
         \end{cases}$
-        And,$ G=[C_1(A-BF)^{-1}]^{-1}$,Using the Matlab we obtain the G: \\
+        And$ G=[C_1(A-BF)^{-1}]^{-1}$,Using the Matlab we obtain the G: \\
         $G=\begin{bmatrix}
             -942.5693 & -34.5139  &-332.2226\\
             46.3757   &-998.5361  & -27.8396\\
           -330.7754   &-41.6478   &942.7901
             \end{bmatrix}
         $; \\
-        Clearly, the closed-loop system is characterized by the following state space equation we can obtain: 
+        \\
+        Clearly, the closed-loop system is characterized by the following state space equation we obtain: \\
         $\begin{cases} 
             \begin{pmatrix}
                 \dot{x}  \\
@@ -296,7 +308,8 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
                     x\\
                     e
                 \end{pmatrix}+w
-        \end{cases}$
+        \end{cases}$\\
+
         Then,We let $A_c=\begin{bmatrix} 
             A-BF & BF \\
             0 & A-K_eC
@@ -328,6 +341,7 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
             0&         0&         0&         0&         0&         0&         0&         0&         0&   -0.0000&    0.0000&  0.0000&    0.0000&         0&         0&   -0.0001&         0&   -0.0000 \\
             0&         0&         0&         0&         0&         0&         0&         0&         0&   -0.0000&    0.0000&  0.0000&    0.0000&         0&         0&    0.0001&         0&   -0.0000 
                 \end{smallmatrix}$; \\
+                \\
         The $B_c$ is equal:
         $B_c=1.0e+04 *\begin{bmatrix}
                   0&         0&         0 \\
@@ -350,7 +364,7 @@ I can not caculate the right nums. So I decide to use LQG for this case. And I u
                   0&         0&         0
             \end{bmatrix}
         $; \\
-    \item Summary
+    \item \textbf{ Summary} \\
     Here,We use LQG caculating all required martix,those matrix will all use in the Part2.
 \end{enumerate}
 
@@ -364,7 +378,7 @@ First,I will give the simulink block diagram show figure 1,It has 6 main block,t
     \label{fig:label}
     \end{figure}
 
-Then,I will show the state and error ,and y output from figure 2 and figure 3:\\
+Then,I will show the state and error,and y output from figure 2 and figure 3:\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=20cm,height=10cm,scale=0.6]{state_18.png}
@@ -378,23 +392,141 @@ Then,I will show the state and error ,and y output from figure 2 and figure 3:\\
     \caption{The Plant y output}
     \label{fig:label}
     \end{figure}
-At last,I will show all state and output respectively.
+At last,I will show all state and output respectively.\\
 \begin{figure}[H]
         \centering
-        \subfloat[State:pha]{{\includegraphics[width=8cm]{pha.png} }}%
+        \subfloat[State:pha]{{\includegraphics[width=8cm,height=8cm]{pha.png} }}%
         \qquad
-        \subfloat[Error:pha]{{\includegraphics[width=8cm]{pha.png} }}%
+        \subfloat[Error:pha]{{\includegraphics[width=7.9cm,height=7.9cm]{pha_err.png} }}%
         \caption{Pha state and error}
         \label{fig:example}%
     \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{pha_output.png}
+    \caption{The Plant Pha output}
+    \label{fig:label}
+    \end{figure}
+\begin{figure}[H]
+        \centering
+        \subfloat[State:Theta]{{\includegraphics[width=8cm,height=8cm]{theta.png} }}%
+        \qquad
+        \subfloat[Error:Theta]{{\includegraphics[width=7.9cm,height=7.9cm]{theta_err.png} }}%
+        \caption{Pha state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{theta_out.png}
+    \caption{The Plant Theta output}
+    \label{fig:label}
+    \end{figure}
 
-
+\begin{figure}[H]
+        \centering
+        \subfloat[State:p]{{\includegraphics[width=8cm,height=8cm]{p.png} }}%
+        \qquad
+        \subfloat[Error:p]{{\includegraphics[width=7.9cm,height=7.9cm]{p_err.png} }}%
+        \caption{p state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{p_o.png}
+    \caption{The Plant p output}
+    \label{fig:label}
+    \end{figure}
+\begin{figure}[H]
+        \centering
+        \subfloat[State:q]{{\includegraphics[width=8cm,height=8cm]{q.png} }}%
+        \qquad
+        \subfloat[Error:q]{{\includegraphics[width=7.9cm,height=7.9cm]{q_err.png} }}%
+        \caption{q state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{q_o.png}
+    \caption{The Plant q output}
+    \label{fig:label}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \subfloat[State:as]{{\includegraphics[width=8cm,height=8cm]{as.png} }}%
+        \qquad
+        \subfloat[Error:as]{{\includegraphics[width=7.9cm,height=7.9cm]{as_err.png} }}%
+        \caption{as state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{as_o.png}
+    \caption{The Plant as output}
+    \label{fig:label}
+    \end{figure}
+\begin{figure}[H]
+        \centering
+        \subfloat[State:bs]{{\includegraphics[width=8cm,height=8cm]{bs.png} }}%
+        \qquad
+        \subfloat[Error:bs]{{\includegraphics[width=7.9cm,height=7.9cm]{bs_err.png} }}%
+        \caption{bs state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{bs_o.png}
+    \caption{The Plant bs output}
+    \label{fig:label}
+    \end{figure}    
+    \begin{figure}[H]
+        \centering
+        \subfloat[State:r]{{\includegraphics[width=8cm,height=8cm]{r.png} }}%
+        \qquad
+        \subfloat[Error:r]{{\includegraphics[width=7.9cm,height=7.9cm]{r_err.png} }}%
+        \caption{r state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{r_o.png}
+    \caption{The Plant r output}
+    \label{fig:label}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \subfloat[State:deta]{{\includegraphics[width=8cm,height=8cm]{deta.png} }}%
+        \qquad
+        \subfloat[Error:deta]{{\includegraphics[width=7.9cm,height=7.9cm]{deta_err.png} }}%
+        \caption{deta state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{deta_o.png}
+    \caption{The Plant deta output}
+    \label{fig:label}
+    \end{figure}
+\begin{figure}[H]
+        \centering
+        \subfloat[State:phi]{{\includegraphics[width=8cm,height=8cm]{phi.png} }}%
+        \qquad
+        \subfloat[Error:phi]{{\includegraphics[width=7.9cm,height=7.9cm]{phi_err.png} }}%
+        \caption{phi state and error}
+        \label{fig:example}%
+    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm,height=8cm,scale=0.6]{phi_o.png}
+    \caption{The Plant phi output}
+    \label{fig:label}
+    \end{figure}     
 
 \end{enumerate}
 \begin{thebibliography}{00}
-
-    \bibitem{b1} G. O. Young, ``Synthetic structure of industrial plastics,'' in \emph{Plastics,} 2\textsuperscript{nd} ed., vol. 3, J. Peters, Ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15--64.
-    
+    \bibitem{b1} Liu X , Chen B M , Lin Z . Linear systems toolkit in Matlab: structural decompositions and their applications[J]. Journal of Control Theory and Applications, 2005, 3(3):p.287-294.
+    \bibitem{b2} C. T. Chen, Linear System Theory and Design, Holt, Rinehart $&$ Winston, 1984
+    \bibitem{b3} B. M. Chen, Robust and $H\infty$ Control, Springer, 2000
+    \bibitem{b4} G. Cai, B. M. Chen, T. H. Lee, Unmanned Rotorcraft Systems, Springer, 2011
 \end{thebibliography}
 \end{document}
